@@ -6,7 +6,7 @@ export default function Home() {
       <div className="text-center space-y-4">
         <h1 className="text-4xl font-bold">Ossome Hacks 3.0</h1>
         <p className="text-lg">We are glad to have you here.Hey Just </p>
-         <p>explore our content and enjoy your stay!</p>
+         <p>enjoy your stay!</p>
       </div>
     </div>
   );
