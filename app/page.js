@@ -1,7 +1,14 @@
+
 "use client";
 
 import { useState } from "react";
 import Image from "next/image";
+
+import FAQPage from "./faq/page";
+import AboutPage from "./about/page";
+import ContactPage from "./contact/page";
+import PrizesPage from "./prizes/page";
+
 
 export default function Home() {
   // Theme: 'light' | 'aurora' | 'oh20'
@@ -413,4 +420,13 @@ export default function Home() {
       </section>
     </main>
   );
+
+    <main className="p-8 text-center">
+      <AboutPage/>
+      <PrizesPage/>
+      <ContactPage/>
+      <FAQPage/>
+    </main>
+  )
+
 }
