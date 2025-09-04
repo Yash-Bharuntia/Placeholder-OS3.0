@@ -64,6 +64,36 @@ export default function Home() {
         </p>
       </section>
 
+      {/* Main Website Link */}
+      <section
+        className={`w-full max-w-xl rounded-2xl shadow-md p-6 mb-8 border-2 ${pick(
+          "bg-white border-blue-400",
+          "bg-[#0b132b]/70 border-[#7bffb7]",
+          "bg-[#1a0933]/70 border-[#8b5cf6]"
+        )}`}
+      >
+        <h2 className={pick("text-2xl font-bold text-pink-400 mb-4", "text-2xl font-bold text-[#ff6e7f] mb-4", "text-2xl font-bold text-[#d946ef] mb-4")}>
+          Main Website
+        </h2>
+        <p className="text-center">
+          For more information, visit our main website:
+        </p>
+        <div className="flex justify-center">
+          <a
+            href="https://www.githubsrmist.in/"
+            className={pick(
+              "mt-4 px-6 py-3 rounded-full font-semibold shadow-md bg-pink-400 text-white hover:bg-yellow-300 transition-colors",
+              "mt-4 px-6 py-3 rounded-full font-semibold shadow-md bg-[#43cea2] text-black hover:bg-[#f9d423] transition-colors",
+              "mt-4 px-6 py-3 rounded-full font-semibold shadow-md bg-[#8b5cf6] text-white hover:bg-[#d946ef] transition-colors"
+            )}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Website
+          </a>
+        </div>
+      </section>
+
       {/* Pre-Registration Form */}
       <section
         className={`w-full max-w-xl rounded-2xl shadow-md p-6 mb-8 border-2 ${pick(
@@ -135,10 +165,10 @@ export default function Home() {
         <p className="text-white">
           Email: {" "}
           <a
-            href="mailto:hackathon@yourdomain.com"
+            href="mailto:community@githubsrmist.edu.tech"
             className={pick("text-blue-400 underline", "text-[#7bffb7] underline", "text-[#c084fc] underline")}
           >
-            hackathon@yourdomain.com
+            community@githubsrmist.edu.tech
           </a>
         </p>
       </section>
@@ -170,7 +200,7 @@ export default function Home() {
             "px-4 py-2 rounded-lg bg-[#0f172a] text-white font-semibold hover:bg-[#7bffb7] transition-colors",
             "px-4 py-2 rounded-lg bg-[#140022] text-white font-semibold hover:bg-[#d946ef] transition-colors"
           )}>GitHub</a>
-          <a href="https://linkedin.com/company/yourpage" className={pick(
+          <a href="https://www.linkedin.com/company/githubsrm/" className={pick(
             "px-4 py-2 rounded-lg bg-yellow-300 text-black font-semibold hover:bg-pink-400 transition-colors",
             "px-4 py-2 rounded-lg bg-[#f9d423] text-black font-semibold hover:bg-[#ff6e7f] transition-colors",
             "px-4 py-2 rounded-lg bg-[#c084fc] text-black font-semibold hover:bg-[#8b5cf6] transition-colors"
@@ -220,8 +250,8 @@ export default function Home() {
         </h2>
         <p className="text-white mb-2">
           Interested in sponsoring? Email us at {" "}
-          <a href="mailto:sponsor@yourdomain.com" className={pick("text-pink-400 underline", "text-[#ff6e7f] underline", "text-[#d946ef] underline")}>
-            sponsor@yourdomain.com
+          <a href="mailto:community@githubsrmist.edu.tech" className={pick("text-pink-400 underline", "text-[#ff6e7f] underline", "text-[#d946ef] underline")}>
+            community@githubsrmist.edu.tech
           </a>
         </p>
         <p className="text-white">
