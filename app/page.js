@@ -250,7 +250,7 @@ export default function Home() {
       <section
         className={`w-full max-w-xl rounded-2xl shadow-md p-6 mb-8 border-2 ${pick(
           "bg-black border-yellow-300",
-          "bg-[#0f172a]/80 border-[#f9d423]",
+          "bg-[#0b172a]/80 border-[#f9d423]",
           "bg-[#140022]/80 border-[#d946ef]"
         )}`}
       >
@@ -374,51 +374,27 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className={
-              "flex items-center justify-center h-20 rounded-xl " +
+              "flex items-center justify-center h-24 rounded-xl overflow-hidden p-2 " +
               pick("bg-white border border-blue-400", "bg-[#0b132b] border border-[#7bffb7]/50", "bg-[#1a0933] border border-[#8b5cf6]/50")
             }
           >
-            <Image
-              src="/mlh.png"
-              alt="MLH"
-              width={96}
-              height={32}
-              className="object-contain"
-              onError={(e) => {
-                const el = e.currentTarget;
-                el.style.display = "none";
-                const fallback = document.createElement("div");
-                fallback.textContent = "MLH";
-                fallback.className = "text-lg font-bold";
-                el.parentElement?.appendChild(fallback);
-              }}
-            />
+            <div className="relative w-40 h-12 sm:w-48 sm:h-14">
+              <Image src="/mlh-logo.png" alt="MLH" fill className="object-contain" />
+            </div>
           </a>
-          {/* GitHub */}
+          {/* SRM */}
           <a
-            href="https://github.com"
+            href="https://www.srmist.edu.in/"
             target="_blank"
             rel="noopener noreferrer"
             className={
-              "flex items-center justify-center h-20 rounded-xl " +
+              "flex items-center justify-center h-24 rounded-xl overflow-hidden p-2 " +
               pick("bg-white border border-blue-400", "bg-[#0b132b] border border-[#7bffb7]/50", "bg-[#1a0933] border border-[#8b5cf6]/50")
             }
           >
-            <Image
-              src="/github-mark.png"
-              alt="GitHub"
-              width={36}
-              height={36}
-              className="object-contain"
-              onError={(e) => {
-                const el = e.currentTarget;
-                el.style.display = "none";
-                const fallback = document.createElement("div");
-                fallback.textContent = "GitHub";
-                fallback.className = "text-lg font-bold";
-                el.parentElement?.appendChild(fallback);
-              }}
-            />
+            <div className="relative w-40 h-12 sm:w-48 sm:h-14">
+              <Image src="/srm-logo.png" alt="SRM" fill className="object-contain" />
+            </div>
           </a>
         </div>
         <p className="text-white mb-2">
