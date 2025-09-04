@@ -130,8 +130,18 @@ export default function Home() {
           />
           <input
             type="text"
-            name="social"
-            placeholder="Social Link"
+            name="github"
+            placeholder="GitHub URL (e.g. https://github.com/username)"
+            className={pick(
+              "w-full px-4 py-2 rounded-lg border-2 border-yellow-300 focus:border-pink-400 focus:outline-none",
+              "w-full px-4 py-2 rounded-lg border-2 bg-[#0f172a] text-white border-[#f9d423] focus:border-[#ff6e7f] focus:outline-none",
+              "w-full px-4 py-2 rounded-lg border-2 bg-[#140022] text-white border-[#c084fc] focus:border-[#d946ef] focus:outline-none"
+            )}
+          />
+          <input
+            type="text"
+            name="linkedin"
+            placeholder="LinkedIn URL (e.g. https://www.linkedin.com/in/username)"
             className={pick(
               "w-full px-4 py-2 rounded-lg border-2 border-yellow-300 focus:border-pink-400 focus:outline-none",
               "w-full px-4 py-2 rounded-lg border-2 bg-[#0f172a] text-white border-[#f9d423] focus:border-[#ff6e7f] focus:outline-none",
@@ -185,26 +195,21 @@ export default function Home() {
           Follow Us
         </h2>
         <div className="flex flex-wrap gap-4 justify-center">
-          <a href="https://facebook.com/yourpage" className={pick(
-            "px-4 py-2 rounded-lg bg-blue-400 text-white font-semibold hover:bg-pink-400 transition-colors",
-            "px-4 py-2 rounded-lg bg-[#7bffb7] text-black font-semibold hover:bg-[#ff6e7f] transition-colors",
-            "px-4 py-2 rounded-lg bg-[#8b5cf6] text-white font-semibold hover:bg-[#d946ef] transition-colors"
-          )}>Facebook</a>
-          <a href="https://instagram.com/yourpage" className={pick(
-            "px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold hover:bg-yellow-300 transition-colors",
-            "px-4 py-2 rounded-lg bg-[#ff6e7f] text-black font-semibold hover:bg-[#f9d423] transition-colors",
-            "px-4 py-2 rounded-lg bg-[#d946ef] text-white font-semibold hover:bg-[#8b5cf6] transition-colors"
-          )}>Instagram</a>
-          <a href="https://github.com/yourorg/yourrepo" className={pick(
-            "px-4 py-2 rounded-lg bg-black text-white font-semibold hover:bg-blue-400 transition-colors",
-            "px-4 py-2 rounded-lg bg-[#0f172a] text-white font-semibold hover:bg-[#7bffb7] transition-colors",
-            "px-4 py-2 rounded-lg bg-[#140022] text-white font-semibold hover:bg-[#d946ef] transition-colors"
-          )}>GitHub</a>
-          <a href="https://www.linkedin.com/company/githubsrm/" className={pick(
-            "px-4 py-2 rounded-lg bg-yellow-300 text-black font-semibold hover:bg-pink-400 transition-colors",
-            "px-4 py-2 rounded-lg bg-[#f9d423] text-black font-semibold hover:bg-[#ff6e7f] transition-colors",
-            "px-4 py-2 rounded-lg bg-[#c084fc] text-black font-semibold hover:bg-[#8b5cf6] transition-colors"
-          )}>LinkedIn</a>
+           <a href="https://instagram.com/yourpage" className={pick(
+             "px-4 py-2 rounded-lg bg-pink-400 text-white font-semibold hover:bg-yellow-300 transition-colors",
+             "px-4 py-2 rounded-lg bg-[#ff6e7f] text-black font-semibold hover:bg-[#f9d423] transition-colors",
+             "px-4 py-2 rounded-lg bg-[#d946ef] text-white font-semibold hover:bg-[#8b5cf6] transition-colors"
+           )}>Instagram</a>
+           <a href="https://github.com/yourorg/yourrepo" className={pick(
+             "px-4 py-2 rounded-lg bg-black text-white font-semibold hover:bg-blue-400 transition-colors",
+             "px-4 py-2 rounded-lg bg-[#0f172a] text-white font-semibold hover:bg-[#7bffb7] transition-colors",
+             "px-4 py-2 rounded-lg bg-[#140022] text-white font-semibold hover:bg-[#d946ef] transition-colors"
+           )}>GitHub</a>
+           <a href="https://www.linkedin.com/company/githubsrm/" className={pick(
+             "px-4 py-2 rounded-lg bg-yellow-300 text-black font-semibold hover:bg-pink-400 transition-colors",
+             "px-4 py-2 rounded-lg bg-[#f9d423] text-black font-semibold hover:bg-[#ff6e7f] transition-colors",
+             "px-4 py-2 rounded-lg bg-[#c084fc] text-black font-semibold hover:bg-[#8b5cf6] transition-colors"
+           )}>LinkedIn</a>
         </div>
       </section>
 
