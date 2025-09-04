@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 export default function Home() {
   // Theme: 'light' | 'aurora' | 'oh20'
@@ -8,6 +9,8 @@ export default function Home() {
   const isLight = theme === "light";
   const isAurora = theme === "aurora";
   const isOH20 = theme === "oh20";
+  const [heroSrc, setHeroSrc] = useState("/ossome-hacks-3.0.png");
+  const [ghBadgeOk, setGhBadgeOk] = useState(true);
 
   // Backgrounds
   const background = isLight
@@ -77,7 +80,7 @@ export default function Home() {
         { key: "reg-eligibility", q: "What if I’m not eligible? Can I mentor or judge?", a: "If you’re not a student or can’t compete, you can volunteer, mentor, or judge. Email community@githubsrmist.edu.tech." },
         { key: "reg-how", q: "How do I apply?", a: "Fill out the pre‑registration form. We’ll email you when the full application opens with all requirements." },
         { key: "reg-teams", q: "How do teams work?", a: "Teams of up to 4 are allowed. You can come solo and form a team at the event too." },
-        { key: "reg-srm", q: "What if I go to SRM?", a: "SRM students are welcome, and selection will follow the same process as other schools." },
+        { key: "reg-srm", q: "What if I study at SRM?", a: "SRM students are welcome, and selection will follow the same process as other schools." },
         { key: "reg-mentor-judge", q: "Where can I apply to be a mentor or judge?", a: "Send a short intro to community@githubsrmist.edu.tech and we’ll get back with details." },
       ],
     },
@@ -121,12 +124,43 @@ export default function Home() {
 
       {/* Hero Section */}
       <section
-        className={`w-full max-w-2xl rounded-3xl shadow-lg p-8 mb-8 text-center border-4 ${pick(
+        className={`relative w-full max-w-2xl rounded-3xl shadow-lg p-8 mb-8 text-center border-4 ${pick(
           "bg-black border-pink-400",
           "bg-[#0f172a]/80 border-[#43cea2]",
           "bg-[#140022]/80 border-[#8b5cf6]"
         )}`}
       >
+        {/* GitHub corner badge */}
+        <div className="absolute top-3 right-3">
+          {ghBadgeOk ? (
+            <Image
+              src="/github-mark.png"
+              alt="GitHub"
+              width={36}
+              height={36}
+              className={"rounded-full shadow-md border " + pick("border-pink-400/40", "border-[#43cea2]/40", "border-[#8b5cf6]/40")}
+              onError={() => setGhBadgeOk(false)}
+            />
+          ) : (
+            <div className={
+              "w-9 h-9 rounded-full grid place-items-center text-xs font-bold " +
+              pick("bg-white text-black border border-pink-400/40", "bg-[#0b1624] text-teal-100 border border-[#43cea2]/40", "bg-[#1a0f33] text-purple-100 border border-[#8b5cf6]/40")
+            }>
+              GH
+            </div>
+          )}
+        </div>
+        <div className="mx-auto mb-6 flex justify-center">
+          <Image
+            src={heroSrc}
+            alt="Ossome Hacks 3.0 poster"
+            width={256}
+            height={256}
+            className={"rounded-2xl shadow-xl border " + pick("border-pink-400/40", "border-[#43cea2]/40", "border-[#8b5cf6]/40")}
+            onError={() => setHeroSrc("/globe.svg")}
+            priority
+          />
+        </div>
         <h1
           className={pick(
             "text-5xl font-extrabold text-pink-400 mb-4",
@@ -332,6 +366,61 @@ export default function Home() {
         <h2 className={pick("text-2xl font-bold text-yellow-300 mb-2", "text-2xl font-bold text-[#f9d423] mb-2", "text-2xl font-bold text-[#e9d5ff] mb-2")}>
           Sponsors
         </h2>
+        {/* Sponsors grid */}
+        <div className="mt-3 grid grid-cols-2 gap-4">
+          {/* MLH */}
+          <a
+            href="https://mlh.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              "flex items-center justify-center h-20 rounded-xl " +
+              pick("bg-white border border-blue-400", "bg-[#0b132b] border border-[#7bffb7]/50", "bg-[#1a0933] border border-[#8b5cf6]/50")
+            }
+          >
+            <Image
+              src="/mlh.png"
+              alt="MLH"
+              width={96}
+              height={32}
+              className="object-contain"
+              onError={(e) => {
+                const el = e.currentTarget;
+                el.style.display = "none";
+                const fallback = document.createElement("div");
+                fallback.textContent = "MLH";
+                fallback.className = "text-lg font-bold";
+                el.parentElement?.appendChild(fallback);
+              }}
+            />
+          </a>
+          {/* GitHub */}
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              "flex items-center justify-center h-20 rounded-xl " +
+              pick("bg-white border border-blue-400", "bg-[#0b132b] border border-[#7bffb7]/50", "bg-[#1a0933] border border-[#8b5cf6]/50")
+            }
+          >
+            <Image
+              src="/github-mark.png"
+              alt="GitHub"
+              width={36}
+              height={36}
+              className="object-contain"
+              onError={(e) => {
+                const el = e.currentTarget;
+                el.style.display = "none";
+                const fallback = document.createElement("div");
+                fallback.textContent = "GitHub";
+                fallback.className = "text-lg font-bold";
+                el.parentElement?.appendChild(fallback);
+              }}
+            />
+          </a>
+        </div>
         <p className="text-white mb-2">
           Interested in sponsoring? Email us at {" "}
           <a href="mailto:community@githubsrmist.edu.tech" className={pick("text-pink-400 underline", "text-[#ff6e7f] underline", "text-[#d946ef] underline")}>
