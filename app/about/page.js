@@ -21,7 +21,7 @@ export default function AboutPage() {
         <div className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition">
           <h2 className="text-xl font-semibold mb-2">Why Join?</h2>
           <p className="text-gray-600">
-            You'll get hands-on experience, mentorship, and an opportunity to 
+            You&apos;ll get hands-on experience, mentorship, and an opportunity to 
             showcase your skills to industry leaders.
           </p>
         </div>

@@ -4,10 +4,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import FAQPage from "./faq/page";
-import AboutPage from "./about/page";
-import ContactPage from "./contact/page";
-import PrizesPage from "./prizes/page";
+// Removed unused page imports (FAQPage, AboutPage, ContactPage, PrizesPage)
 
 
 export default function Home() {
@@ -18,6 +15,9 @@ export default function Home() {
   const isOH20 = theme === "oh20";
   const [heroSrc, setHeroSrc] = useState("/ossome-hacks-3.0.png");
   const [ghBadgeOk, setGhBadgeOk] = useState(true);
+  // Fallback flags for sponsor logos
+  const [mlhOk, setMlhOk] = useState(true);
+  const [srmOk, setSrmOk] = useState(true);
 
   // Backgrounds
   const background = isLight
@@ -386,7 +386,13 @@ export default function Home() {
             }
           >
             <div className="relative w-40 h-12 sm:w-48 sm:h-14">
-              <Image src="/mlh-logo.png" alt="MLH" fill className="object-contain" />
+              <Image
+                src={mlhOk ? "/mlh-logo.png" : "/vercel.svg"}
+                alt="MLH"
+                fill
+                className="object-contain"
+                onError={() => setMlhOk(false)}
+              />
             </div>
           </a>
           {/* SRM */}
@@ -400,7 +406,13 @@ export default function Home() {
             }
           >
             <div className="relative w-40 h-12 sm:w-48 sm:h-14">
-              <Image src="/srm-logo.png" alt="SRM" fill className="object-contain" />
+              <Image
+                src={srmOk ? "/srm-logo.png" : "/next.svg"}
+                alt="SRM"
+                fill
+                className="object-contain"
+                onError={() => setSrmOk(false)}
+              />
             </div>
           </a>
         </div>
@@ -420,13 +432,4 @@ export default function Home() {
       </section>
     </main>
   );
-
-    <main className="p-8 text-center">
-      <AboutPage/>
-      <PrizesPage/>
-      <ContactPage/>
-      <FAQPage/>
-    </main>
-  )
-
 }
